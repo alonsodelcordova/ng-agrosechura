@@ -1,0 +1,72 @@
+<h1>Contáctenos</h1>
+<hr>
+<form [formGroup]="form">
+    <div class="form" >
+        <div class="row">
+            <div class="col-md my-2">
+                <label for="tipo-doc" >Tipo de Documento: </label>
+                <select name="tipo-doc" id="tipo-doc" class="form-control" formControlName="tipoDoc">
+                    <option value="0" hidden>Seleccionar</option>
+                    <option value="DNI">Dni</option>
+                    <option value="RUC">Ruc</option>
+                </select>
+            </div>
+            <div class="col-md my-2">
+                <label for="documento" >Numero de Documento:</label>
+                <input type="number" name="documento" id="documento" class="form-control" 
+                    placeholder="ingrese su numero" formControlName="nroDoc">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md my-2">
+                <label for="razon-social" >Razon Social: </label>
+                <input type="text" name="razon-social" id="razon-social" class="form-control" 
+                    placeholder="ingrese su razon social" formControlName="razonSocial">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md my-2">
+                <label for="email" >Email: </label>
+                <input type="email" name="email" id="email" class="form-control" 
+                    placeholder="ingrese su email" formControlName="email">
+            </div>
+            <div class="col-md my-2">
+                <label for="telefono" >Numero de Telefono o Celular: </label>
+                <input type="number" name="telefono" id="telefono" class="form-control" 
+                    placeholder="numero de telefono" formControlName="phone">
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col-md my-2">
+                <label for="asunto" >Asunto: </label>
+                <input type="text" name="asunto" id="asunto" class="form-control" placeholder="Asunto..."
+                    formControlName="asunto">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md my-2">
+                <label for="comentarios" >Comentarios: </label>
+                <textarea class="form-control" id="comentarios" name="comentario" cols="60" rows="7" id="textarea"
+                    formControlName="comentario"></textarea>
+            </div>
+        </div>
+        <br>
+        <div class="text-center">
+            <label>
+                <input name="copia" type="checkbox" formControlName="isCopy">
+                <span class="ms-2">Recibir copia al E-mail</span>
+            </label>
+        </div>
+        <br>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-success mx-2"
+            [disabled]="form.invalid" (click)="send()">Enviar</button>
+        <button  class="btn btn-danger mx-2" (click)="reset()">Cancelar</button>
+    </div>
+</form>
+
+<app-spinner *ngIf="showSpinner"></app-spinner>

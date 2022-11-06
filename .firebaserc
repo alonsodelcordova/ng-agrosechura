@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "agrosechura-piura": {
+      "hosting": {
+        "ng-agrosechura": [
+          "agrosechura-piura"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "agrosechura-piura"
+  }
+}

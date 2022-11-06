@@ -1,0 +1,12 @@
+img{
+    border-radius: 10px;
+}
+
+.total{
+    max-height: 400px;
+    width: auto;
+    max-width: 100%;
+    @media (max-width:768px) {
+        height: auto!important;
+    }
+}
